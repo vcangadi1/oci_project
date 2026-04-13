@@ -119,6 +119,12 @@ oci_project/
 
 If this tool saved you time or money, consider [buying me a coffee](https://buymeacoffee.com/friendlyneighbourhoodtech).
 
+<p align="center">
+  <a href="https://buymeacoffee.com/friendlyneighbourhoodtech">
+    <img src="public/images/qr-code.png" alt="Buy Me a Coffee QR Code" width="200" />
+  </a>
+</p>
+
 ## ⚠️ Disclaimer
 
 This is a free helping tool and does not constitute immigration, legal, or professional advice. Always refer to official government websites for the most up-to-date application requirements.
