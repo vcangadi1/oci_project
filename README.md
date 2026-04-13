@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Passport Photo Cropper & PDF Compressor
 
-## Getting Started
+A modern **Next.js** web application for resizing and cropping passport photos and compressing PDFs — supporting **UK, EU/Schengen, USA, Indian Passport/Visa, and OCI** applications. 100 % browser-based, free, private, and ad-free.
 
-First, run the development server:
+## ✨ Features
 
+### � Passport Photo Cropper
+- **Multi-Country Presets** — UK (4:5), EU/Schengen (413:531), USA (1:1), India (1:1), OCI Signature (3:1)
+- **Smart Crop Controls** — Drag, resize, zoom, ±1° and 45° rotation, horizontal & vertical flip
+- **Live Dimensions** — Real-time readouts for X, Y, Width, Height, and Rotation
+- **Per-Preset Constraints** — Automatic min/max dimension and file-size enforcement
+- **JPEG Export** — Automatic JPEG conversion with correct file-size limits
+
+### 📄 PDF Compressor
+- **Budget-Aware Compression** — Targets ≤ 1 MB output automatically
+- **Per-Page Quality Optimisation** — Smart byte-budget allocation across pages
+- **Large File Support** — Handles PDFs up to 50 MB
+- **100 % Client-Side** — Uses pdf-lib and pdf.js; files never leave your device
+
+### 🌐 Additional Pages
+- **Home** — Tool overview with magic-border cards and trust badges
+- **Services** — Detailed breakdown of all features
+- **Requirements** — Country-specific photo, signature, and PDF specifications
+- **About** — Project story, values, and Buy Me a Coffee support
+- **Contact** — EmailJS-powered contact form with direct email fallback
+
+## 🛠️ Tech Stack
+
+- **Next.js 16** — React framework with App Router & Turbopack
+- **React 19** — Latest React with TypeScript (strict mode)
+- **Tailwind CSS v4** — Utility-first styling
+- **Cropper.js** — Image cropping via `react-cropper`
+- **pdf-lib** — PDF creation and manipulation
+- **pdf.js** — PDF rendering (CDN)
+- **@emailjs/browser** — Contact form email delivery
+- **React Icons** — Icon library
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) v18 or later
+
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
+```bash
+npx next build
+npx next start -p 3000
+```
 
-## Learn More
+### Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_XXXXXXX
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_XXXXXXX
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=XXXXXXXXXXXXXX
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
+```
+oci_project/
+├── app/
+│   ├── layout.tsx              # Root layout with theme provider
+│   ├── page.tsx                # Home page
+│   ├── globals.css             # Theme styles & component CSS
+│   ├── icon.svg                # Favicon (crop-tool icon)
+│   ├── photo-cropper/
+│   │   └── page.tsx            # Photo cropper page
+│   ├── pdf-compressor/
+│   │   └── page.tsx            # PDF compressor page
+│   ├── services/
+│   │   └── page.tsx            # Services page
+│   ├── requirements/
+│   │   └── page.tsx            # Requirements page
+│   ├── about/
+│   │   └── page.tsx            # About page
+│   ├── contact/
+│   │   └── page.tsx            # Contact page (EmailJS)
+│   └── api/
+│       └── sample-image/
+│           └── route.ts        # Sample image API
+├── components/
+│   ├── Navbar.tsx              # Navigation bar with icons
+│   ├── Footer.tsx              # Footer with links & disclaimer
+│   ├── HeroBanner.tsx          # Hero banner component
+│   ├── ImageCropper.tsx        # Main photo cropper component
+│   ├── PdfCompressor.tsx       # PDF compressor component
+│   └── ThemeSwitcher.tsx       # Light/Dark/System theme toggle
+├── public/
+│   └── images/
+│       └── qr-code.png         # Buy Me a Coffee QR code
+├── package.json
+└── README.md
+```
 
-## Deploy on Vercel
+## 📋 Supported Photo Specifications
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Country          | Aspect Ratio | Dimensions         | Max File Size |
+| ---------------- | ------------ | ------------------ | ------------- |
+| UK               | 4:5          | ≥ 600 × 750 px     | 10 MB         |
+| EU / Schengen    | 413:531      | 300 DPI recommended | —             |
+| USA              | 1:1          | 600–1200 px         | 240 KB        |
+| India (Photo)    | 1:1          | 200–900 px          | 200 KB        |
+| India (Signature)| 3:1          | 200–3500 px         | 1 MB          |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ☕ Support
+
+If this tool saved you time or money, consider [buying me a coffee](https://buymeacoffee.com/friendlyneighbourhoodtech).
+
+## ⚠️ Disclaimer
+
+This is a free helping tool and does not constitute immigration, legal, or professional advice. Always refer to official government websites for the most up-to-date application requirements.

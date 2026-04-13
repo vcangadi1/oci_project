@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#000"/>
+  <!-- Crop-tool icon: matching icon.png — bars cross with gaps at crossing -->
+  
+  <!-- Left vertical bar -->
+  <rect x="15" y="10" width="7" height="38" fill="#fff"/>
+  <!-- Right vertical bar -->
+  <rect x="42" y="16" width="7"  height="38" fill="#fff"/>
+
+  <!-- Top horizontal: left segment (protrusion past left vert, with gap after right edge of vert) -->
+  <rect x="9"  y="16" width="13" height="7"  fill="#fff"/>
+  <!-- Top horizontal: right segment (after gap, joins right vert) -->
+  <rect x="24" y="16" width="25" height="7"  fill="#fff"/>
+
+  <!-- Bottom horizontal: left segment (joins left vert) -->
+  <rect x="15" y="41" width="25" height="7"  fill="#fff"/>
+  <!-- Bottom horizontal: right segment (protrusion past right vert, with gap before left edge of vert) -->
+  <rect x="42" y="41" width="13" height="7"  fill="#fff"/>
+</svg>
